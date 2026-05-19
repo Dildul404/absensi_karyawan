@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 6.0.0-dev+20260429.663cbe73d8
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 19, 2026 at 12:44 PM
+-- Generation Time: May 19, 2026 at 07:48 PM
 -- Server version: 8.4.3
--- PHP Version: 8.4.12
+-- PHP Version: 8.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `absen` (
   `id_absen` int NOT NULL,
   `absen` enum('izin','sakit','alpha','hadir') NOT NULL,
-  `tanggal` datetime NOT NULL,
+  `tanggal_&_waktu` datetime NOT NULL,
   `id_pekerja` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -38,7 +38,7 @@ CREATE TABLE `absen` (
 -- Dumping data for table `absen`
 --
 
-INSERT INTO `absen` (`id_absen`, `absen`, `tanggal`, `id_pekerja`) VALUES
+INSERT INTO `absen` (`id_absen`, `absen`, `tanggal_&_waktu`, `id_pekerja`) VALUES
 (1, 'hadir', '2026-05-12 06:00:15', 1),
 (2, 'sakit', '2026-05-12 08:15:00', 2);
 
@@ -62,6 +62,25 @@ CREATE TABLE `cuti` (
 INSERT INTO `cuti` (`id_cuti`, `awal_cuti`, `akhir_cuti`, `id_pekerja`) VALUES
 (1, '2026-05-29', '2026-07-01', 1),
 (2, '2026-05-15', '2026-05-28', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jabatan`
+--
+
+CREATE TABLE `jabatan` (
+  `id_jabatan` varchar(10) NOT NULL,
+  `jabatan` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `jabatan`
+--
+
+INSERT INTO `jabatan` (`id_jabatan`, `jabatan`) VALUES
+('J001', 'karyawan'),
+('J002', 'manager');
 
 -- --------------------------------------------------------
 
@@ -114,16 +133,16 @@ INSERT INTO `lembur` (`id_lembur`, `durasi_lembur`, `tanggal_lembur`, `id_pekerj
 CREATE TABLE `pekerja` (
   `id_pekerja` int NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `jabatan` enum('karyawan','manager') NOT NULL
+  `id_jabatan` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `pekerja`
 --
 
-INSERT INTO `pekerja` (`id_pekerja`, `nama`, `jabatan`) VALUES
-(1, 'adi', 'karyawan'),
-(2, 'dada', 'manager');
+INSERT INTO `pekerja` (`id_pekerja`, `nama`, `id_jabatan`) VALUES
+(1, 'adi', 'J001'),
+(2, 'dada', 'J002');
 
 -- --------------------------------------------------------
 
@@ -165,6 +184,12 @@ ALTER TABLE `cuti`
   ADD KEY `id_pekerja` (`id_pekerja`);
 
 --
+-- Indexes for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  ADD PRIMARY KEY (`id_jabatan`);
+
+--
 -- Indexes for table `jam_kerja`
 --
 ALTER TABLE `jam_kerja`
@@ -182,7 +207,8 @@ ALTER TABLE `lembur`
 -- Indexes for table `pekerja`
 --
 ALTER TABLE `pekerja`
-  ADD PRIMARY KEY (`id_pekerja`);
+  ADD PRIMARY KEY (`id_pekerja`),
+  ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
 -- Indexes for table `user`
@@ -257,6 +283,12 @@ ALTER TABLE `jam_kerja`
 --
 ALTER TABLE `lembur`
   ADD CONSTRAINT `lembur_ibfk_1` FOREIGN KEY (`id_pekerja`) REFERENCES `pekerja` (`id_pekerja`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Constraints for table `pekerja`
+--
+ALTER TABLE `pekerja`
+  ADD CONSTRAINT `pekerja_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
