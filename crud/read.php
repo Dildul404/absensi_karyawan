@@ -1,9 +1,9 @@
 <?php 
-require '../config/koneksi.php';
+require __DIR__ . '/../config/koneksi.php';
 
 // get method
-$query = "SELECT * FROM pekerja";
-$stmt = $koneksi->prepare($query);
+$stmt = $koneksi->prepare("SELECT *
+FROM pekerja JOIN jabatan
+ON pekerja.id_jabatan = jabatan.id_jabatan");
 $stmt->execute();
-$result = $stmt->fetchAll();
-?>
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
