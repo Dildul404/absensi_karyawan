@@ -5,9 +5,6 @@ require '../config/koneksi.php';
 if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $jabatan = $_POST['jabatan'];
-    $query = "INSERT INTO pekerja (nama, jabatan) VALUES ('$nama', '$jabatan')";
-    $stmt = $koneksi->prepare($query);
-    $stmt->execute();
-    header("Location: /karyawan/crud/read.php");
+    $stmt = $koneksi->prepare("INSERT INTO pekerja (nama, jabatan) VALUES ( ? , ? )");
+    $stmt->execute([$nama, $jabatan]);
 }
-?>

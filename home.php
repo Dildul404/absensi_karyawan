@@ -11,7 +11,7 @@
         <?php include __DIR__ . "/component/sidebar.php" ?>
         <div class="px-10 w-full relative h-screen overflow-y-auto pl-24">
             <?php include __DIR__ . "/component/hero.php" ?>
-            <?php include __DIR__ . "/component/table.php" ?>
+            <?php include __DIR__ . "/component/tabel-pekerja.php" ?>
         </div>
     </div>
 </body>

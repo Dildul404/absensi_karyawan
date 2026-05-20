@@ -20,14 +20,15 @@
   <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
     <legend class="fieldset-legend">Login</legend>
 
-    <form action="" method="POST">
+    <form action="crud/login.php" method="POST">
       <label class="label">Email</label>
-      <input type="email" class="input" placeholder="Email" />
+      <input type="email" class="input" name="email" required placeholder="Email" />
 
       <label class="label">Password</label>
-      <input type="password" class="input" placeholder="Password" />
+      <input type="password" class="input" name="password" required placeholder="Password" />
 
-      <button type="submit" class="btn btn-neutral mt-4">Login</button>
+      <input type="submit" value="Login" name="submit" class="btn btn-neutral mt-4 w-full">
+      <!-- <button type="submit" class="btn btn-neutral mt-4">Login</button> -->
     </form>
   </fieldset>
 </body>
