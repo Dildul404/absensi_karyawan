@@ -17,7 +17,7 @@
             <section>
 
             </section>
-            <?php include __DIR__ . "/component/tabel-pekerja.php" ?>
+            <?php include __DIR__ . "/component/tabel-absen.php" ?>
         </div>
     </div>
 
