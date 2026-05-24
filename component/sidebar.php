@@ -62,8 +62,9 @@
 
           <li>
             <a
-              href="#"
+              href="Lembur.php" id="lembur_link_nav"
               class="group relative flex justify-center rounded-lg px-2 py-1.5 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+              <!-- class="size-5 opacity-75" -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="size-5 opacity-75"
@@ -79,31 +80,24 @@
 
               <span
                 class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                Invoices
+                Lembur
               </span>
             </a>
           </li>
 
           <li>
             <a
-              href="#"
+              href="cuti.php" id="cuti_link_nav"
               class="group relative flex justify-center rounded-lg px-2 py-1.5 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="size-5 opacity-75"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              <svg class="size-5 opacity-75" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="currentColor" d="M4 21q-.825 0-1.412-.587T2 19V8q0-.825.588-1.412T4 6h4V4q0-.825.588-1.412T10 2h4q.825 0 1.413.588T16 4v2h4q.825 0 1.413.588T22 8v11q0 .825-.587 1.413T20 21zm6-15h4V4h-4zM6 8H4v11h2zm10 11V8H8v11zm2-11v11h2V8zm-6 5.5" />
               </svg>
+
 
               <span
                 class="invisible absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white group-hover:visible">
-                Account
+                Cuti
               </span>
             </a>
           </li>
