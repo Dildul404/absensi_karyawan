@@ -28,7 +28,6 @@ require __DIR__ . "/../crud/read_lembur.php";
           Tanggal Lembur
         </th>
 
-
       </tr>
     </thead>
 
@@ -72,17 +71,6 @@ require __DIR__ . "/../crud/read_lembur.php";
           <?php echo $item["tanggal_lembur"] ?>
 
         </td>
-
-        <!-- AKSI -->
-        <td class="px-2 py-2 text-right sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-6 lg:py-3.5">
-
-          <div class="flex justify-end">
-
-
-          </div>
-
-        </td>
-
       </tr>
 
       <?php endforeach; ?>

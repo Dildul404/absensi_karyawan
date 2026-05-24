@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Home</title>
+    <title>Pekerja</title>
 </head>
 <body>
     <div class="flex relative">
         <?php include __DIR__ . "/component/sidebar.php" ?>
         <div class="px-10 w-full relative h-screen overflow-y-auto pl-24">
             <?php include __DIR__ . "/component/hero.php" ?>
+            <section class="mb-6 flex justify-end px-4 sm:px-0">
+                <button id="openFormPekerja" type="button" class="rounded-2xl bg-lime-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-lime-700">
+                    Tambah Pekerja
+                </button>
+            </section>
             <?php include __DIR__ . "/component/tabel-pekerja.php" ?>
         </div>
     </div>
+    <?php include __DIR__ . "/component/form-pekerja.php" ?>
 
     <!-- nav -->
     <script>

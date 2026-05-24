@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Home</title>
+    <title>Absen</title>
 </head>
 <body>
     <div class="flex relative">
@@ -13,13 +13,15 @@
             <header>
                 <h1 class="text-2xl font-bold py-4">Absen</h1>
             </header>
-            <!-- Hari ini -->
-            <section>
-
+            <section class="mb-6 flex justify-end">
+                <button id="openFormAbsen" type="button" class="rounded-2xl bg-lime-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-lime-700">
+                    Tambah Absen
+                </button>
             </section>
             <?php include __DIR__ . "/component/tabel-absen.php" ?>
         </div>
     </div>
+    <?php include __DIR__ . "/component/form-absen.php" ?>
 
     <!-- nav -->
     <script>

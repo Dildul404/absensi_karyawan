@@ -25,7 +25,7 @@ require __DIR__ . "/../crud/read_absen.php";
         </th>
 
         <th class="px-2 py-2 text-left font-semibold sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-6 lg:py-3.5">
-          Tanggal
+          Tanggal dan Waktu
         </th>
 
       </tr>
@@ -68,7 +68,7 @@ require __DIR__ . "/../crud/read_absen.php";
         <!-- TANGGAL -->
         <td class="px-2 py-2 text-gray-700 sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-6 lg:py-3.5">
 
-          <?php echo $item["tanggal"] ?>
+          <?php echo $item["tanggal_waktu"] ?>
 
         </td>
       </tr>

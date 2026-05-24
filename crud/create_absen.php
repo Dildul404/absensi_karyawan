@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
 
         $query = $koneksi->prepare("
-            INSERT INTO absen (absen, tanggal, id_pekerja)
+            INSERT INTO absen (absen, tanggal_waktu, id_pekerja)
             VALUES (:absen, :tanggal, :id_pekerja)
         ");
 
