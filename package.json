@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Alghifarimaulaabi/absensi_karyawan#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.0",
+    "daisyui": "^5.5.20",
     "tailwindcss": "^4.3.0"
   }
 }

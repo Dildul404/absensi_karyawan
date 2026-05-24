@@ -16,9 +16,15 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" defer></script>
 </head>
 
-<body>
-  <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-    <legend class="fieldset-legend">Login</legend>
+<body class="flex justify-center items-center h-[100vh] flex-col">
+  <h1 class="mb-6 text-2xl font-bold text-center leading-tight text-gray-900 sm:text-2xl md:text-4xl">
+    Login
+        <span class="text-lime-600">
+          Page
+        </span>
+      </h1>
+  <div class="">
+  <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-6 py-15 shadow-2xl">
 
     <form action="crud/login.php" method="POST">
       <label class="label">Email</label>
@@ -31,6 +37,7 @@
       <!-- <button type="submit" class="btn btn-neutral mt-4">Login</button> -->
     </form>
   </fieldset>
+  </div>
 </body>
 
 </html>
