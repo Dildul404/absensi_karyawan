@@ -1,4 +1,4 @@
-<div class="flex z-100 absolute h-screen w-16 flex-col justify-between border-e border-gray-200 bg-white">
+<div class="flex z-50 absolute h-screen w-16 flex-col justify-between border-e border-gray-200 bg-white">
   <div>
     <div class="inline-flex size-16 items-center justify-center">
       <span

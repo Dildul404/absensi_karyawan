@@ -13,13 +13,15 @@
             <header>
                 <h1 class="text-2xl font-bold py-4">Cuti</h1>
             </header>
-            <!-- Hari ini -->
-            <section>
-
+            <section class="mb-6 flex justify-end">
+                <button id="openFormCuti" type="button" class="rounded-2xl bg-lime-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-lime-700">
+                    Tambah Cuti
+                </button>
             </section>
             <?php include __DIR__ . "/component/tabel-cuti.php" ?>
         </div>
     </div>
+    <?php include __DIR__ . "/component/form-cuti.php" ?>
 
     <!-- nav -->
     <script>

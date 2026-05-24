@@ -7,17 +7,17 @@ require "../config/koneksi.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $nama = $_POST['nama'];
-    $jabatan = $_POST['jabatan'];
+    $id_jabatan = $_POST['id_jabatan'];
 
     try {
 
         $query = $koneksi->prepare("
-            INSERT INTO pekerja (nama, jabatan)
-            VALUES (:nama, :jabatan)
+            INSERT INTO pekerja (nama, id_jabatan)
+            VALUES (:nama, :id_jabatan)
         ");
 
         $query->bindParam(':nama', $nama);
-        $query->bindParam(':jabatan', $jabatan);
+        $query->bindParam(':id_jabatan', $id_jabatan);
 
         $query->execute();
 
