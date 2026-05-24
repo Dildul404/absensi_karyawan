@@ -1,0 +1,27 @@
+{
+  "name": "karyawan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/css/style.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./public/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alghifarimaulaabi/absensi_karyawan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Alghifarimaulaabi/absensi_karyawan/issues"
+  },
+  "homepage": "https://github.com/Alghifarimaulaabi/absensi_karyawan#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "daisyui": "^5.5.20",
+    "tailwindcss": "^4.3.0"
+  }
+}
