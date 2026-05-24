@@ -44,8 +44,8 @@ require __DIR__ . "/../crud/read.php";
           </div>
         </td>
 
-        <td class="hidden px-3 py-2.5 text-gray-600 sm:table-cell md:px-4 md:py-3 lg:px-6 lg:py-3.5">
-           <?php echo($item["jabatan"]) ?>
+        <td class="hidden px-3 py-2.5 text-gray-700 sm:table-cell md:px-4 md:py-3 lg:px-6 lg:py-3.5">
+           <?php echo($item["nama"]) ?>
         </td>
 
         <td class="px-2 py-2 text-gray-700 sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-6 lg:py-3.5">
