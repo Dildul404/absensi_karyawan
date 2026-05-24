@@ -28,6 +28,10 @@ require __DIR__ . "/../crud/read_cuti.php";
           Akhir Cuti
         </th>
 
+        <th class="px-2 py-2 text-left font-semibold sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-6 lg:py-3.5">
+          Aksi
+        </th>
+
       </tr>
     </thead>
 
@@ -78,12 +82,9 @@ require __DIR__ . "/../crud/read_cuti.php";
 
         <!-- AKSI -->
         <td class="px-2 py-2 text-right sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-6 lg:py-3.5">
-
-          <div class="flex justify-end">
-
-
-          </div>
-
+            <button class="block rounded-lg bg-lime-100 px-2 py-1 text-xs font-medium text-lime-700 transition hover:bg-lime-200 sm:px-3 sm:py-1.5 sm:text-sm">
+              Pengajuan cuti
+            </button>
         </td>
 
       </tr>

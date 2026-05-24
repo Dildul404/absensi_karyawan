@@ -9,7 +9,7 @@ try {
             absen.id_absen,
             pekerja.nama,
             absen.absen,
-            absen.tanggal
+            absen.tanggal_waktu
         FROM absen
         JOIN pekerja
         ON absen.id_pekerja = pekerja.id_pekerja
