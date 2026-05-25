@@ -56,15 +56,30 @@ require __DIR__ . "/../crud/read.php";
 
         <td class="px-2 py-2 text-right sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-6 lg:py-3.5">
           <div class="flex flex-col gap-1 sm:flex-row sm:justify-end sm:gap-1.5">
-            <button class="rounded-lg bg-lime-100 px-2 py-1 text-xs font-medium text-lime-700 transition hover:bg-lime-200 sm:px-3 sm:py-1.5 sm:text-sm">
+            <button
+              type="button"
+              data-page="absen"
+              data-worker-id="<?php echo htmlspecialchars($item["id_pekerja"]); ?>"
+              class="js-open-action rounded-lg bg-lime-100 px-2 py-1 text-xs font-medium text-lime-700 transition hover:bg-lime-200 sm:px-3 sm:py-1.5 sm:text-sm"
+            >
               Absen
             </button>
             
-            <button class="rounded-lg bg-indigo-100 px-2 py-1 text-xs font-medium text-indigo-700 transition hover:bg-indigo-200 sm:px-3 sm:py-1.5 sm:text-sm">
+            <button
+              type="button"
+              data-page="cuti"
+              data-worker-id="<?php echo htmlspecialchars($item["id_pekerja"]); ?>"
+              class="js-open-action rounded-lg bg-indigo-100 px-2 py-1 text-xs font-medium text-indigo-700 transition hover:bg-indigo-200 sm:px-3 sm:py-1.5 sm:text-sm"
+            >
               Cuti
             </button>
 
-            <button class="rounded-lg bg-rose-100 px-2 py-1 text-xs font-medium text-rose-700 transition hover:bg-rose-200 sm:px-3 sm:py-1.5 sm:text-sm">
+            <button
+              type="button"
+              data-page="lembur"
+              data-worker-id="<?php echo htmlspecialchars($item["id_pekerja"]); ?>"
+              class="js-open-action rounded-lg bg-rose-100 px-2 py-1 text-xs font-medium text-rose-700 transition hover:bg-rose-200 sm:px-3 sm:py-1.5 sm:text-sm"
+            >
               Lembur
             </button>
 
@@ -77,3 +92,14 @@ require __DIR__ . "/../crud/read.php";
     </tbody>
   </table>
 </div>
+
+<script>
+  document.querySelectorAll('.js-open-action').forEach(button => {
+    button.addEventListener('click', () => {
+      const page = button.dataset.page;
+      const workerId = button.dataset.workerId;
+
+      window.location.href = `${page}.php?worker_id=${encodeURIComponent(workerId)}`;
+    });
+  });
+</script>

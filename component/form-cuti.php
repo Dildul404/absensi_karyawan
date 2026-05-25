@@ -50,15 +50,43 @@ $pekerjaList = $pekerjaStmt->fetchAll(PDO::FETCH_ASSOC);
   const closeFormCuti = document.getElementById('closeFormCuti');
   const cancelFormCuti = document.getElementById('cancelFormCuti');
   const formCuti = document.getElementById('form-cuti');
+  const selectPekerjaCuti = document.getElementById('id_pekerja_cuti');
+
+  const openModalCuti = () => {
+    if (!modalCuti) return;
+    modalCuti.classList.remove('hidden');
+    modalCuti.classList.add('grid');
+  };
+
+  const closeModalCuti = () => {
+    if (!modalCuti) return;
+    modalCuti.classList.add('hidden');
+    modalCuti.classList.remove('grid');
+  };
+
+  const urlParamsCuti = new URLSearchParams(window.location.search);
+  const selectedWorkerIdCuti = urlParamsCuti.get('worker_id');
+
+  if (selectedWorkerIdCuti && selectPekerjaCuti) {
+    const optionCuti = [...selectPekerjaCuti.options].find(item => item.value === selectedWorkerIdCuti);
+    if (optionCuti) {
+      selectPekerjaCuti.value = selectedWorkerIdCuti;
+    }
+    openModalCuti();
+
+    if (window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
 
   if (openFormCuti) {
-    openFormCuti.addEventListener('click', () => modalCuti.classList.remove('hidden'));
+    openFormCuti.addEventListener('click', openModalCuti);
   }
   if (closeFormCuti) {
-    closeFormCuti.addEventListener('click', () => modalCuti.classList.add('hidden'));
+    closeFormCuti.addEventListener('click', closeModalCuti);
   }
   if (cancelFormCuti) {
-    cancelFormCuti.addEventListener('click', () => modalCuti.classList.add('hidden'));
+    cancelFormCuti.addEventListener('click', closeModalCuti);
   }
   if (formCuti) {
     formCuti.addEventListener('submit', async event => {
@@ -71,7 +99,7 @@ $pekerjaList = $pekerjaStmt->fetchAll(PDO::FETCH_ASSOC);
       const result = await response.json();
       alert(result.message || 'Form dikirim');
       if (result.status) {
-        modalCuti.classList.add('hidden');
+        closeModalCuti();
         formCuti.reset();
         window.location.reload();
       }

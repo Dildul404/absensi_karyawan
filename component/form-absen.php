@@ -56,16 +56,47 @@ $pekerjaList = $pekerjaStmt->fetchAll(PDO::FETCH_ASSOC);
   const closeFormAbsen = document.getElementById('closeFormAbsen');
   const cancelFormAbsen = document.getElementById('cancelFormAbsen');
   const formAbsen = document.getElementById('form-absen');
+  const selectPekerjaAbsen = document.getElementById('id_pekerja_absen');
+
+  const openModalAbsen = () => {
+    if (!modalAbsen) return;
+    modalAbsen.classList.remove('hidden');
+    modalAbsen.classList.add('grid');
+  };
+
+  const closeModalAbsen = () => {
+    if (!modalAbsen) return;
+    modalAbsen.classList.add('hidden');
+    modalAbsen.classList.remove('grid');
+  };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedWorkerId = urlParams.get('worker_id');
+
+  if (selectedWorkerId && selectPekerjaAbsen) {
+    const option = [...selectPekerjaAbsen.options].find(item => item.value === selectedWorkerId);
+    if (option) {
+      selectPekerjaAbsen.value = selectedWorkerId;
+    }
+    openModalAbsen();
+
+    if (window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
 
   if (openFormAbsen) {
-    openFormAbsen.addEventListener('click', () => modalAbsen.classList.remove('hidden'));
+    openFormAbsen.addEventListener('click', openModalAbsen);
   }
+
   if (closeFormAbsen) {
-    closeFormAbsen.addEventListener('click', () => modalAbsen.classList.add('hidden'));
+    closeFormAbsen.addEventListener('click', closeModalAbsen);
   }
+
   if (cancelFormAbsen) {
-    cancelFormAbsen.addEventListener('click', () => modalAbsen.classList.add('hidden'));
+    cancelFormAbsen.addEventListener('click', closeModalAbsen);
   }
+
   if (formAbsen) {
     formAbsen.addEventListener('submit', async event => {
       event.preventDefault();
@@ -77,7 +108,7 @@ $pekerjaList = $pekerjaStmt->fetchAll(PDO::FETCH_ASSOC);
       const result = await response.json();
       alert(result.message || 'Form dikirim');
       if (result.status) {
-        modalAbsen.classList.add('hidden');
+        closeModalAbsen();
         formAbsen.reset();
         window.location.reload();
       }
