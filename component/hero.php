@@ -4,16 +4,15 @@
 
       <!-- Heading -->
       <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl md:text-6xl">
-        Build better products
+        Absensi karyawan
         <br />
         <span class="text-lime-600">
-          faster than ever
+          Data absensi
         </span>
       </h1>
 
       <!-- Description -->
       <p class="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-gray-600 sm:text-xl">
-        The complete platform for teams to design, develop, and deliver exceptional digital experiences.
-        Everything you need from idea to production.
+        Pendataan untuk setiap karyawan. Percepat pekerjaan anda di sini
       </p>
 </section>
